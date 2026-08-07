@@ -5,7 +5,7 @@
   "description": "Oracle Integration Cloud Rapid Adapter Builder is a set of tools that makes it easier for you to validate, develop and deploy the next-gen RAB adapters for Oracle Integration Cloud (OIC) straight from VS Code.",
   "publisher": "Oracle",
   "license": "UPL",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "icon": "media/images/logo.png",
   "engines": {
     "vscode": "^1.73.0"
@@ -237,7 +237,7 @@
         {
           "when": "resourceDirname =~ /(\\/|\\\\)api$/ && resourceFilename =~ /^openapi\\.resource\\.json$/",
           "command": "orab.add.convert.append",
-          "group": "orab@4" 
+          "group": "orab@4"
         }
       ],
       "editor/context": [
@@ -376,7 +376,7 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run -S esbuild-base -- --minify",
-    "esbuild-base": "rm -rf out && esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
+    "esbuild-base": "node -e \"const fs=require('fs');fs.rmSync('out',{recursive:true,force:true});\" && esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node",
     "build": "npm run -S esbuild-base -- --sourcemap",
     "watch": "npm run -S esbuild-base -- --sourcemap --watch",
     "fmt": "prettier --write \"src/**/*.ts\"&& npm run test -- --fix",

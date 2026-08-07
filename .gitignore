@@ -15,3 +15,22 @@ test-resources
 vscode*
 .tmp.env
 glob-copy.js*
+
+# Auto-committer ignored files
+*.tmp
+*.temp
+*.log
+*.cache
+*.dll
+*.exe
+*.env
+.vscode/**
+.idea/**
+.vs/**
+node_modules/**
+.git/**
+dist/**
+build/**
+*.swp
+*.swo
+Thumbs.db
